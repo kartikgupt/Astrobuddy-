@@ -40,20 +40,13 @@ app = FastAPI(
 )
 
 # --- CORS Configuration ---
-# Allow requests from frontend (localhost:3000, 5173, 8080)
+origins = ["https://astrobuddy-kis8.onrender.com"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost:5173",  # Vite default port
-        "http://127.0.0.1:5173",
-        "http://localhost:8080",  # Alternative frontend port
-        "http://127.0.0.1:8080"
-    ],
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods
-    allow_headers=["*"],  # Allow all headers
+    allow_methods=["*"],
+    allow_headers=["*"]
 )
 
 
