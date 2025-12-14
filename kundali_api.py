@@ -42,7 +42,8 @@ app = FastAPI(
 # --- CORS Configuration ---
 # Allow both production (Render) and local development origins
 origins = [
-    "https://cosmic-guidance.onrender.com",  # Production frontend (Render)
+    "https://cosmic-guidance.onrender.com",  # Production frontend (Render) - without trailing slash
+    "https://cosmic-guidance.onrender.com/",  # Production frontend (Render) - with trailing slash
     "https://astrobuddy-kis8.onrender.com",  # Backend URL (for reference)
     "http://localhost:8080",  # Local development (Vite default)
     "http://127.0.0.1:8080",
